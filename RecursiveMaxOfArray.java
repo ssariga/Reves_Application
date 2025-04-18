@@ -30,28 +30,7 @@ public class RecursiveMaxOfArray
         
         // ADD YOUR CODE HERE
 //vvvvvvvvv ADDED CODE vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv        
-        if( (data == null)
-            || (data.length < 1)
-            || (from > to)
-            || (from < 0)
-            || (to >= data.length))
-            throw new BadArgumentsForMaxException("check arguments");
-        
-        if(from == to)
-            //base case
-            result = data[from];
-        else
-        {
-            // recursive case
-            // split into two parts and find the max of both
-            int middle = (from + to)/2;
-            int result1 = max(data, from, middle);
-            int result2 = max(data, middle+1, to);
-            if(result1 > result2)
-                result = result1;
-            else
-                result = result2;
-        }
+
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
         return result;
