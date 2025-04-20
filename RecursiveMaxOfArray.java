@@ -29,9 +29,33 @@ public class RecursiveMaxOfArray
         int result = 0;
         
         // ADD YOUR CODE HERE
-//vvvvvvvvv ADDED CODE vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv        
+        if ((data == null) || (data.length < 1) || (from > to) || (from < 0) || (to >= data.length))
+        {
+            throw new BadArgumentsForMaxException("check arguments");
+        }
+        else if (from == to)
+        {
+            result = data[from];
+        }
+        else
+        {
+            int middle = 0;
+            int left = 0;
+            int right = 0;
 
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            middle = (from + to) / 2;
+            left = max(data, from, middle);
+            right = max(data, middle+1, to);
+
+            if (left > right)
+            {
+                result = left;
+            }
+            else
+            {
+                    result = right;
+            }
+        }
 
         return result;
     }
